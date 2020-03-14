@@ -50,7 +50,7 @@ function! ElelineFsize(f) abort
   else
     let size = printf('%.1f', l:size/1024.0/1024.0/1024.0) . 'g'
   endif
-  return '  '.size.' '
+  return size.' '
 endfunction
 
 function! ElelineCurFname() abort
@@ -207,7 +207,7 @@ function! s:StatusLine() abort
   let l:coc = '%{ElelineCoc()}'
   let l:vista = '%#ElelineVista#%{ElelineVista()}%*'
   let l:prefix = l:bufnr_winnr.l:paste
-  let l:common = l:curfname.l:branch.l:status.l:error.l:warning.l:tags.l:lcn.l:coc.l:vista
+  let l:common = l:curfname.l:branch.l:error.l:warning.l:tags.l:lcn.l:coc.l:vista
   if get(g:, 'eleline_slim', 0)
     return l:prefix.'%<'.l:common
   endif
@@ -218,8 +218,11 @@ function! s:StatusLine() abort
   let l:enc = ' %{&fenc != "" ? &fenc : &enc} | %{&bomb ? ",BOM " : ""}'
   let l:ff = '%{&ff} %*'
   let l:pct = '%#Eleline9# %P %*'
-  return l:prefix.l:tot.'%<'.l:fsize.l:common
-        \ .'%='.l:m_r_f.l:pos.l:enc.l:ff.l:pct
+
+  let l:left = l:prefix.'%<'.l:common
+  let l:right = l:m_r_f.l:pos.l:enc.l:fsize.l:pct
+
+  return l:left.'%='.l:right
 endfunction
 
 let s:colors = {
