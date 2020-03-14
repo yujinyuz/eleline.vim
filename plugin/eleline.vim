@@ -199,7 +199,7 @@ function! s:StatusLine() abort
   let l:paste = s:def('ElelinePaste')
   let l:curfname = s:def('ElelineCurFname')
   let l:branch = s:def('ElelineGitBranch')
-  let l:status = s:def('ElelineGitStatus')
+  " let l:status = s:def('ElelineGitStatus')
   let l:error = s:def('ElelineError')
   let l:warning = s:def('ElelineWarning')
   let l:tags = '%{exists("b:gutentags_files") ? gutentags#statusline() : ""} '
@@ -211,7 +211,7 @@ function! s:StatusLine() abort
   if get(g:, 'eleline_slim', 0)
     return l:prefix.'%<'.l:common
   endif
-  let l:tot = s:def('ElelineTotalBuf')
+  " let l:tot = s:def('ElelineTotalBuf')
   let l:fsize = '%#ElelineFsize#%{ElelineFsize(@%)}%*'
   let l:m_r_f = '%#Eleline7# %m%r%y %*'
   let l:pos = '%#Eleline8# '.(s:font?"\ue0a1":'').'%l/%L:%c%V |'
