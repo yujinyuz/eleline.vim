@@ -294,7 +294,7 @@ function! s:hi_statusline() abort
   call s:hi('ElelineBufnrWinnr' , [232 , 178]    , [89 , '']  )
   call s:hi('ElelineTotalBuf'   , [178 , s:bg+8] , [240 , ''] )
   call s:hi('ElelinePaste'      , [232 , 178]    , [232 , 178]    , 'bold')
-  call s:hi('ElelineFsize'      , [250 , s:bg+6] , [235 , ''] )
+  call s:hi('ElelineFsize'      , [250 , s:bg+4] , [235 , ''] )
   call s:hi('ElelineCurFname'   , [171 , s:bg+4] , [171 , '']     , 'bold' )
   call s:hi('ElelineGitBranch'  , [184 , s:bg+2] , [89  , '']     , 'bold' )
   call s:hi('ElelineGitStatus'  , [208 , s:bg+2] , [89  , ''])
