@@ -207,7 +207,7 @@ function! s:StatusLine() abort
   let l:coc = '%{ElelineCoc()}'
   let l:vista = '%#ElelineVista#%{ElelineVista()}%*'
   let l:prefix = l:bufnr_winnr.l:paste
-  let l:common = l:curfname.l:branch.l:error.l:warning.l:tags.l:lcn.l:coc.l:vista
+  let l:common = l:branch.l:error.l:warning.l:tags.l:lcn.l:coc.l:vista
   if get(g:, 'eleline_slim', 0)
     return l:prefix.'%<'.l:common
   endif
@@ -219,7 +219,7 @@ function! s:StatusLine() abort
   let l:ff = '%{&ff} %*'
   let l:pct = '%#Eleline9# %P %*'
 
-  let l:left = l:prefix.'%<'.l:common
+  let l:left = l:prefix.l:curfname.'%<'.l:common
   let l:right = l:m_r_f.l:pos.l:enc.l:fsize.l:pct
 
   return l:left.'%='.l:right
